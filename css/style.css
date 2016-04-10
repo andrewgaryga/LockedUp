@@ -75,6 +75,8 @@ aside {
 
 .navbar {
   margin-bottom: 0px; }
+  .navbar .nav-padding {
+    padding-right: 6px; }
 
 .affix ~ .container {
   position: relative;
@@ -88,6 +90,49 @@ nav.navbar-default .navbar-brand {
     height: 33px;
     width: auto; }
 
+.navbar-default .medium-screen-hide {
+  display: none; }
+
+@media(min-width:992px) {
+  .navbar-default .medium-screen-hide {
+    display: block; } }
+.modal-body {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 16px; }
+  .modal-body ul {
+    list-style-type: none; }
+  .modal-body p {
+    padding-left: 35px; }
+  .modal-body .text-black {
+    color: #000; }
+  .modal-body .extra-margin {
+    margin-top: 8px; }
+  .modal-body .head-item {
+    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 10px; }
+  .modal-body hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-color: #999;
+    border-width: 1px;
+    max-width: 100%; }
+
+.modal-content .btn {
+  border-radius: 3px; }
+.modal-content #MyButton {
+  border: 1px solid #d2d2d2; }
+
+.modal-header {
+  color: #fff;
+  background-color: #f05f40;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px; }
+
 header {
   position: relative;
   width: 100%;
@@ -98,7 +143,8 @@ header {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  -o-background-size: cover; }
+  -o-background-size: cover;
+  min-height: 50%; }
   header .header-content {
     position: relative;
     width: 100%;
@@ -139,7 +185,7 @@ header {
 
 @media(min-width:768px) {
   header {
-    min-height: 100%; }
+    min-height: 50%; }
 
   header .header-content {
     position: absolute;
@@ -166,13 +212,28 @@ section#price_attention_catcher {
   padding: 20px 0; }
   section#price_attention_catcher .section-heading {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 26px;
+    font-size: 16px;
     line-height: 45px; }
-  section#price_attention_catcher a.btn {
-    margin: 0;
+  section#price_attention_catcher .btn {
     margin-top: -5px;
-    margin-left: 10px; }
+    margin-left: 10px;
+    color: #fff;
+    background-color: #f05f40;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s; }
+    section#price_attention_catcher .btn:hover {
+      background-color: #fff;
+      color: #f05f40; }
+  section#price_attention_catcher .btn-xl {
+    padding: 12px 20px; }
 
+@media(min-width : 1200px) {
+  .section-heading {
+    font-size: 20px; } }
+@media(min-width : 1200px) {
+  .section-heading {
+    font-size: 26px; } }
 section#services {
   padding-top: 14px;
   padding-bottom: 12px; }
@@ -186,6 +247,13 @@ section#services {
     font-size: 26px;
     margin: 0; }
 
+.service-box {
+  max-width: 400px;
+  margin: 10px auto 0; }
+
+@media only screen and (min-width: 992px) {
+  .service-box {
+    margin: 20px auto 0; } }
 section#about {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -220,9 +288,12 @@ section#about {
     font-family: "Lato", sans-serif;
     font-weight: 300;
     font-size: 18px; }
-  section#about hr {
-    max-width: 200px;
-    margin: 50px auto; }
+  section#about hr.intro {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-width: 1px;
+    border-color: #ccc;
+    max-width: 100px; }
 
 section#when .round, section#when .round-wrap {
   border-radius: 15px; }
@@ -276,7 +347,26 @@ section#contact .form-group {
     padding: 20px; }
   section#contact .form-group textarea.form-control {
     height: 236px; }
+section#contact .panel-default {
+  margin-top: 20px; }
+  section#contact .panel-default .panel-body {
+    color: #999;
+    font-size: 16px;
+    padding: 13.5px; }
+    section#contact .panel-default .panel-body .element {
+      padding-top: 10px;
+      padding-bottom: 15px;
+      margin-bottom: 0; }
+  section#contact .panel-default hr {
+    max-width: 60px;
+    border-color: #ddd;
+    border-width: 1px;
+    margin-top: 19px;
+    margin-bottom: 19px; }
 
+@media(min-width:1200px) {
+  section#contact .panel-default {
+    margin-top: 0; } }
 footer {
   color: #fff; }
   footer h3 {
@@ -290,7 +380,14 @@ footer {
     padding: 25px 0;
     background-color: #f8f8f8;
     color: #333; }
+  footer img {
+    border-radius: 30px; }
+  footer .hidden-mobile {
+    display: none; }
 
+@media(min-width:992px) {
+  footer .hidden-mobile {
+    display: block; } }
 .map-lg,
 .map-md,
 .map-sm {
@@ -298,26 +395,43 @@ footer {
   margin-top: 0px;
   margin-bottom: 15px; }
 
+hr.hidden-mobile {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-width: 1px;
+  border-color: #ccc;
+  max-width: 100px; }
+
+.map-xs {
+  display: block; }
+  .map-xs img {
+    margin: auto;
+    margin-bottom: 20px; }
+
 @media(min-width:768px) {
   .map-sm {
     display: block; }
 
   .map-lg,
-  .map-md {
+  .map-md,
+  .map-xs {
     display: none; } }
 @media(min-width:992px) {
   .map-md {
     display: block; }
 
   .map-lg,
-  .map-sm {
+  .map-sm,
+  .map-xs {
     display: none; } }
 @media(min-width:1200px) {
   .map-lg {
     display: block; }
 
   .map-md,
-  .map-sm {
+  .map-sm,
+  .map-xs,
+  hr.display-mobile {
     display: none; } }
 .vcenter {
   display: inline-block;
@@ -356,12 +470,7 @@ footer {
   font-weight: 700;
   text-transform: uppercase; }
 
-.service-box {
-  max-width: 400px;
-  margin: 50px auto 0; }
-
-@media only screen and (min-width: 992px) {
-  .service-box {
-    margin: 20px auto 0; } }
+.carousel-inner img {
+  margin: auto; }
 
 /*# sourceMappingURL=style.css.map */

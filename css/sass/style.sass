@@ -80,6 +80,8 @@ aside
 
 .navbar 
 	margin-bottom: 0px
+	.nav-padding
+		padding-right: 6px
 
 .affix ~ .container
 	position: relative
@@ -92,7 +94,53 @@ nav.navbar-default .navbar-brand
 	> img 
 		height: 33px
 		width: auto
-	
+
+.navbar-default		
+	.medium-screen-hide
+		display: none
+
+@media(min-width:992px) 
+	.navbar-default		
+		.medium-screen-hide
+			display: block
+
+.modal-body
+	font-family: 'Lato', sans-serif
+	font-weight: 300
+	font-size: 16px
+	ul 
+		list-style-type: none
+	p 
+		padding-left: 35px
+	.text-black
+		color: #000
+	.extra-margin
+		margin-top: 8px
+	.head-item
+		font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif
+		margin-bottom: 10px
+	hr 
+		margin-top: 5px
+		margin-bottom: 5px
+		border-color: #999
+		border-width: 1px
+		max-width: 100%
+
+.modal-content
+	.btn 
+		border-radius: 3px
+	#MyButton 
+		border: 1px solid #d2d2d2
+
+.modal-header
+	color: #fff
+	background-color:  #f05f40
+	-webkit-border-top-left-radius: 5px
+	-webkit-border-top-right-radius: 5px
+	-moz-border-radius-topleft: 5px
+	-moz-border-radius-topright: 5px
+	border-top-left-radius: 5px
+	border-top-right-radius: 5px
 
 header 
 	position: relative
@@ -105,6 +153,7 @@ header
 	-moz-background-size: cover
 	background-size: cover
 	-o-background-size: cover
+	min-height: 50%
 	// margin-top: 50px
 	.header-content 
 		position: relative
@@ -157,7 +206,7 @@ header
 
 @media(min-width:768px) 
 	header 
-		min-height: 100%
+		min-height: 50%
 	header .header-content 
 		position: absolute
 		top: 50%
@@ -183,12 +232,29 @@ section#price_attention_catcher
 	padding: 20px 0
 	.section-heading
 		font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif
-		font-size: 26px
+		font-size: 16px
 		line-height: 45px
-	a.btn 
-		margin: 0
+	.btn 
 		margin-top: -5px
 		margin-left: 10px
+		color: #fff
+		background-color: #f05f40
+		-webkit-transition: all 0.5s
+		-moz-transition: all 0.5s
+		transition: all 0.5s
+		&:hover
+			background-color: #fff
+			color: #f05f40
+	.btn-xl
+		padding: 12px 20px
+
+@media(min-width : 1200px) 
+	.section-heading
+		font-size: 20px
+
+@media(min-width : 1200px) 
+	.section-heading
+		font-size: 26px
 
 section#services 
 	padding-top: 14px
@@ -202,6 +268,15 @@ section#services
 	h2 
 		font-size: 26px
 		margin: 0
+
+
+.service-box 
+	max-width: 400px
+	margin: 10px auto 0
+
+@media only screen and (min-width : 992px)
+	.service-box 
+		margin: 20px auto 0
 
 section#about
 	padding-top: 30px
@@ -241,9 +316,15 @@ section#about
 		font-family: 'Lato', sans-serif
 		font-weight: 300
 		font-size: 18px
-	hr
-		max-width: 200px
-		margin: 50px auto
+	hr.intro 
+		margin-top: 10px
+		margin-bottom: 20px
+		border-width: 1px
+		border-color: #ccc
+		max-width: 100px
+	// hr
+	// 	max-width: 200px
+	// 	margin: 50px auto
 
 	
 section#when
@@ -300,7 +381,30 @@ section#contact
 			padding: 20px
 		textarea.form-control 
 			height: 236px
+	.panel-default
+		margin-top: 20px
+		.panel-body 
+			color: #999
+			font-size: 16px
+			padding: 13.5px
+			.element 
+				padding-top: 10px
+				padding-bottom: 15px
+				margin-bottom: 0
+		hr
+			max-width: 60px
+			border-color: #ddd
+			border-width: 1px
+			margin-top: 19px
+			margin-bottom: 19px
 
+@media(min-width:1200px) 
+	section#contact
+		.panel-default
+			margin-top: 0
+
+
+			
 footer
 	color: #fff
 	h3 
@@ -314,6 +418,14 @@ footer
 		padding: 25px 0
 		background-color: #f8f8f8
 		color: #333
+	img
+		border-radius: 30px
+	.hidden-mobile
+		display: none
+
+@media(min-width:992px) 
+	footer .hidden-mobile
+		display: block
 
 // map position
 .map-lg,
@@ -323,25 +435,42 @@ footer
 	margin-top: 0px
 	margin-bottom: 15px
 
+hr.hidden-mobile
+	margin-top: 0px
+	margin-bottom: 0px
+	border-width: 1px
+	border-color: #ccc
+	max-width: 100px
+
+.map-xs
+	display: block	
+	img 
+		margin: auto
+		margin-bottom: 20px
+
 @media(min-width:768px) 
 	.map-sm
 		display: block
 	.map-lg,
-	.map-md
+	.map-md,
+	.map-xs
 		display: none
 
 @media(min-width:992px) 
 	.map-md
 		display: block
 	.map-lg,
-	.map-sm
+	.map-sm,
+	.map-xs
 		display: none
 
 @media(min-width:1200px) 
 	.map-lg
 		display: block
 	.map-md,
-	.map-sm
+	.map-sm,
+	.map-xs,
+	hr.display-mobile
 		display: none
 
 .table
@@ -387,10 +516,5 @@ footer
 	font-weight: 700
 	text-transform: uppercase
 
-.service-box 
-	max-width: 400px
-	margin: 50px auto 0
-
-@media only screen and (min-width : 992px)
-	.service-box 
-		margin: 20px auto 0
+.carousel-inner img 
+	margin: auto
